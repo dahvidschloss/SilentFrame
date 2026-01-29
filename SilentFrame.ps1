@@ -3,7 +3,11 @@
 # Date: 01-29-2026
 # Update: 01-29-2026
 # Patch Notes: 
-# Description: Designed for transmitting files over ICMP by breaking them into manageable chunks to emulate a windows default ping
+# Description: SilentFrame connects to Chromium's CDP WebSocket, auto‑attaches to page targets, and logs page lifecycle/console events to both the terminal and console.log. 
+#             It can also inject a configurable JavaScript snippet (defaulting to a DOM field listener) when a page finishes loading.
+
+
+param(
 
 
 param(
@@ -474,3 +478,4 @@ $receiver.Dispose()
 $ws.Dispose()
 
 Write-Host "Done. Check console.log for events."
+
