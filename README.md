@@ -11,7 +11,7 @@ A Research POC on Post-Exploitation Credential Collection through Chromium Brows
 
 ## Setup
 
-Since SilentFrame requires CDP to be running you must either execute the Chroumium based browser with the debugger flag like so:
+Since SilentFrame requires CDP to be running you must either execute the Chromium based browser with the debugger flag like so:
 ```powershell
 & "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"   --remote-debugging-port=9222
 ```
