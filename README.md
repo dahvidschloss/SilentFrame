@@ -41,7 +41,7 @@ If you want to change the JavaScript being run can use the `-Js` flag
 If you want to change the debugging port you can use the `-Port` flag
 
 > [!IMPORTANT]
-> Due to the nature of this script we intentionally neutered the capabilites to not work within multi‑step login flows like those found on Gmail or O365 login to prvent script-kiddie level wins. If properly modified the script can work within these environments. 
+> Due to the nature of this script we intentionally neutered the capabilites to not work within multi‑step login flows like those found on Gmail or O365 in order to prvent script-kiddie level wins. Though, if properly modified the script can work within these environments. 
 
 
 
