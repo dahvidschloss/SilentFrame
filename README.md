@@ -79,7 +79,7 @@ The following vendor detection table presents our test results on whether the ac
 
 | AV Vendor 	|  Detected? 		| Notes 	|
 | ------------  	| -----------| ---------------		|
-| McAffee	| Not Detected	|		|
+| McAfee	| Not Detected	|		|
 | Avast 	| Not Detected	|		|
 | TrendMicro	| Not Detected 	|		|	
 | ESET		| Not Detected 	|		|
