@@ -6,10 +6,6 @@
 # Description: SilentFrame connects to Chromium's CDP WebSocket, auto‑attaches to page targets, and logs page lifecycle/console events to both the terminal and console.log. 
 #             It can also inject a configurable JavaScript snippet (defaulting to a DOM field listener) when a page finishes loading.
 
-
-param(
-
-
 param(
   [string]$DebuggerHost = "127.0.0.1",
   [int]$Port = 9222,
@@ -478,4 +474,5 @@ $receiver.Dispose()
 $ws.Dispose()
 
 Write-Host "Done. Check console.log for events."
+
 
