@@ -89,5 +89,8 @@ The following vendor detection table presents our test results on whether the ac
 | CS Falcon	| Not Detected	| Not Aggressive Mode 	|
 | Sophos	| Not Detected 	|		|
 | Cylance	| Not Detected	|		|
+| Huntress | Not Detected | 3rd Party Tested |
+| Sentinel 1 | Not Detected | 3rd Party Tested |
+| Fortinet  | Not Detected | 3rd Party Tested |
 
 
